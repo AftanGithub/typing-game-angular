@@ -1,2 +1,19 @@
-<h1>Hello Angular</h1>
-<button class="button is-primary">Hello world</button>
+<div class="container mt-5">
+    <div class="columns is-centered">
+        <div class="box column is-half">
+            <h1 class="title has-text-centered">Typing Challenge</h1>
+            
+
+           <div class="box">
+            <span class="has-text-centered is-size-4" [ngClass]="compare(letter,enteredText[i])" *ngFor="let letter of randomText.split('');let i=index">{{letter}}</span>
+           </div>
+
+            <div class="field">
+                <input (input)="handleUserInput($event)" class="input" />
+            </div>
+           <div class="box has-text-centered" *ngIf="enteredText===randomText">
+            <h1 class="title">Success</h1>
+           </div>
+        </div>
+    </div>
+</div>

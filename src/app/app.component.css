@@ -1,0 +1,12 @@
+.green{
+    color:rgb(4, 238, 102);
+}
+
+.red{
+    color: red;
+    font-weight: bold;
+}
+
+.pending{
+    color: rgb(63, 63, 63);
+}
