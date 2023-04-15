@@ -10,3 +10,11 @@
 .pending{
     color: rgb(63, 63, 63);
 }
+
+.mt-50{
+    margin-top: 5rem;
+}
+
+.awardImg{
+    width: 100px;
+}

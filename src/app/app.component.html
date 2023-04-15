@@ -1,18 +1,23 @@
-<div class="container mt-5">
+<div class="container mt-50">
     <div class="columns is-centered">
-        <div class="box column is-half">
+        <div class="box column is-two-thirds">
             <h1 class="title has-text-centered">Typing Challenge</h1>
-            
-
-           <div class="box">
+            <div class="is-flex is-justify-content-center" *ngIf="!isStarted" >
+                <button (click)="handleStartGame()" class="button is-primary " >Start</button>
+            </div>
+           
+           <div *ngIf="isStarted">
+            <div class="box">
             <span class="has-text-centered is-size-4" [ngClass]="compare(letter,enteredText[i])" *ngFor="let letter of randomText.split('');let i=index">{{letter}}</span>
-           </div>
+            </div>
 
             <div class="field">
-                <input (input)="handleUserInput($event)" class="input" />
+                <input autofocus (input)="handleUserInput($event)" class="input" />
             </div>
+           </div>
            <div class="box has-text-centered" *ngIf="enteredText===randomText">
-            <h1 class="title">Success</h1>
+            <img [src]="getSrc()" class="awardImg">
+            <h3 class="is-size-5 has-text-weight-bold">Challenge Completed</h3>
            </div>
         </div>
     </div>
